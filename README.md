@@ -1,6 +1,6 @@
 # Improving the User Experience of the QDAcity Coding Editor
 
-**MSc thesis — mixed-methods UX research and fullstack product engineering on [QDAcity](https://qdacity.com), a cloud-based Qualitative Data Analysis (QDA) platform used by academic researchers.**
+**MSc thesis: mixed-methods UX research and fullstack product engineering on [QDAcity](https://qdacity.com), a cloud-based Qualitative Data Analysis (QDA) platform used by academic researchers.**
 
 ![React](https://img.shields.io/badge/Frontend-React.js-61DAFB)
 ![Spring Boot](https://img.shields.io/badge/Backend-Java_%2F_Spring_Boot-6DB33F)
@@ -17,7 +17,7 @@
 
 ## TL;DR
 
-- **Problem.** QDAcity's coding editor — the workspace where non-technical academics tag and analyse documents, had three usability gaps: no way to organise documents, a UML-based code visualisation too complex for its users, and a modal-heavy workflow that broke researchers' flow.
+- **Problem.** QDAcity's coding editor, the workspace where non-technical academics tag and analyse documents, had three usability gaps: no way to organise documents, a UML-based code visualisation too complex for its users, and a modal-heavy workflow that broke researchers' flow.
 - **Approach.** I grounded the work in established HCI theory (Information Architecture, User-Centered Design, affordances), turned it into a formal specification of functional and non-functional requirements against the **ISO/IEC 25010** quality model, then designed, built, and rigorously evaluated three features.
 - **Result.** Every requirement was met. Highlights: **~90% test coverage**, drag-and-drop responses **≤ 580 ms** (budget 600), saves averaging **486 ms** (budget 750), real-time sync in **0.5–1.4 s** (budget 2 s), full **WCAG 2.1 AA** compliance, and **4 modal dialogs eliminated**.
 
@@ -25,7 +25,7 @@
 
 ## Context
 
-**Qualitative Data Analysis (QDA)** is how researchers make sense of unstructured material such as interviews and transcripts: they *code* it, tagging passages with concepts to surface themes and build theory. [QDAcity](https://qdacity.com) is a cloud platform that supports this, and its **coding editor** is where researchers spend most of their time — so the editor's usability directly shapes how productive a research project can be.
+**Qualitative Data Analysis (QDA)** is how researchers make sense of unstructured material such as interviews and transcripts: they *code* it, tagging passages with concepts to surface themes and build theory. [QDAcity](https://qdacity.com) is a cloud platform that supports this, and its **coding editor** is where researchers spend most of their time, so the editor's usability directly shapes how productive a research project can be.
 
 The platform's core users are **non-technical academics**. As QDAcity grew, the editor accumulated friction that hurt exactly those users. My thesis set out to find where that friction actually lived, fix the parts that mattered most, and prove the fixes worked against measurable criteria.
 
@@ -34,7 +34,7 @@ The platform's core users are **non-technical academics**. As QDAcity grew, the 
 A review of the literature plus an audit of the existing editor converged on three concrete gaps:
 
 1. **No document organisation.** Users could not even create folders. Documents lived in a flat list that did not scale to real projects spanning many sources, participants, or analysis stages.
-2. **An over-complex code visualisation.** The "Codemap" was built on a UML-style meta-model, the *Codesystem Language* (CSL), with **21 entity types and 20 relationship types** — that assumed object-oriented literacy. Powerful for technical users, a steep wall for everyone else.
+2. **An over-complex code visualisation.** The "Codemap" was built on a UML-style meta-model, the *Codesystem Language* (CSL), with **21 entity types and 20 relationship types**, that assumed object-oriented literacy. Powerful for technical users, a steep wall for everyone else.
 3. **A modal-heavy workflow.** Routine actions (rename, create) constantly threw the user into modal dialogs, interrupting the coding flow and adding cognitive load.
 
 ## Approach
@@ -89,7 +89,7 @@ A client–server system: a **React** frontend talks to a **Java / Spring Boot**
 
 All functional requirements were validated through **Selenium acceptance tests and unit tests at ~90% coverage**, and **every non-functional requirement was met**. The measured results:
 
-**Performance — responsiveness** (budget ≤ 600 ms, drop → visual update, avg of 10 runs):
+**Performance - responsiveness** (budget ≤ 600 ms, drop → visual update, avg of 10 runs):
 
 | Operation | Result |
 |---|---|
@@ -97,7 +97,7 @@ All functional requirements were validated through **Selenium acceptance tests a
 | Drag a document into a group | 532.2 ms |
 | Move a node within the Codemap | 580.0 ms |
 
-**Performance — save operations** (budget ≤ 750 ms): overall average **485.7 ms**, ranging from 429 ms (create label) to 590 ms (delete group).
+**Performance - save operations** (budget ≤ 750 ms): overall average **485.7 ms**, ranging from 429 ms (create label) to 590 ms (delete group).
 
 **Real-time collaboration** (budget ≤ 2 s, 3 concurrent users): document-group changes propagated in **1.42 s**, Codemap changes in **0.52 s**.
 
@@ -113,15 +113,15 @@ All functional requirements were validated through **Selenium acceptance tests a
 
 **Frontend:** React.js · styled-components · mxGraph · y.js
 **Backend:** Java / Spring Boot (REST, DAO) · TypeScript / Node.js (Collaborative Editing Service)
-**Data & infra:** Google Cloud Platform — App Engine · Cloud Run · Cloud Storage · Datastore (NoSQL)
+**Data & infra:** Google Cloud Platform, App Engine · Cloud Run · Cloud Storage · Datastore (NoSQL)
 **Quality:** Selenium acceptance tests · unit tests · Nielsen heuristic evaluation · Chrome DevTools profiling · WCAG 2.1 AA
 
 ## What I learned
 
-- **UX decisions are often data-model decisions.** "Let users nest documents" became "pick a tree-storage pattern on NoSQL." Following a user need all the way to the schema — and choosing the adjacency list because the *workflow* is reorganisation-heavy was the most useful lesson.
+- **UX decisions are often data-model decisions.** "Let users nest documents" became "pick a tree-storage pattern on NoSQL." Following a user need all the way to the schema, and choosing the adjacency list because the *workflow* is reorganisation-heavy was the most useful lesson.
 - **Specifying success up front makes it real.** Writing measurable NFRs before building turned "feels faster" into "≤ 600 ms, verified over 10 runs," and kept scope honest.
 - **Removing complexity beats adding features.** The Codemap win came from deleting a 21-entity meta-model, not from new capability.
-- **Name your trade-offs.** Keeping an unmaintained library (mxGraph) was the right call under thesis constraints — but only because the risk was explicit and justified.
+- **Name your trade-offs.** Keeping an unmaintained library (mxGraph) was the right call under thesis constraints, but only because the risk was explicit and justified.
 
 ## Future work
 
