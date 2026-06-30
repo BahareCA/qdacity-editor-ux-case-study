@@ -1,0 +1,64 @@
+<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="760" height="470" rx="16" fill="#FFFFFF"/>
+  <rect x="0.5" y="0.5" width="759" height="469" rx="16" fill="none" stroke="#E6E8EC"/>
+
+  <text x="40" y="50" font-size="22" font-weight="700" fill="#1A1D29">Evaluation results at a glance</text>
+  <text x="40" y="74" font-size="14" fill="#6B7280">All requirements met — measured against pre-defined ISO/IEC 25010 thresholds</text>
+
+  <!-- Row 1 -->
+  <!-- Card: Test coverage -->
+  <g transform="translate(40,104)">
+    <rect width="216" height="100" rx="12" fill="#F5F7FF" stroke="#E0E5FF"/>
+    <text x="18" y="34" font-size="13" font-weight="600" fill="#6B7280">Test coverage</text>
+    <text x="18" y="72" font-size="30" font-weight="700" fill="#4C6EF5">~90%</text>
+    <text x="18" y="90" font-size="11" fill="#9AA1AC">Selenium + unit tests</text>
+  </g>
+  <!-- Card: Responsiveness -->
+  <g transform="translate(272,104)">
+    <rect width="216" height="100" rx="12" fill="#F2FBF5" stroke="#CFEFD9"/>
+    <text x="18" y="34" font-size="13" font-weight="600" fill="#6B7280">Drag-and-drop</text>
+    <text x="18" y="72" font-size="30" font-weight="700" fill="#2E9E5B">≤ 580 ms</text>
+    <text x="18" y="90" font-size="11" fill="#9AA1AC">budget 600 ms · passed</text>
+  </g>
+  <!-- Card: Save -->
+  <g transform="translate(504,104)">
+    <rect width="216" height="100" rx="12" fill="#F2FBF5" stroke="#CFEFD9"/>
+    <text x="18" y="34" font-size="13" font-weight="600" fill="#6B7280">Save operations (avg)</text>
+    <text x="18" y="72" font-size="30" font-weight="700" fill="#2E9E5B">486 ms</text>
+    <text x="18" y="90" font-size="11" fill="#9AA1AC">budget 750 ms · passed</text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- Card: Real-time -->
+  <g transform="translate(40,220)">
+    <rect width="216" height="100" rx="12" fill="#F2FBF5" stroke="#CFEFD9"/>
+    <text x="18" y="34" font-size="13" font-weight="600" fill="#6B7280">Real-time sync</text>
+    <text x="18" y="72" font-size="30" font-weight="700" fill="#2E9E5B">0.5–1.4 s</text>
+    <text x="18" y="90" font-size="11" fill="#9AA1AC">budget 2 s · passed</text>
+  </g>
+  <!-- Card: Accessibility -->
+  <g transform="translate(272,220)">
+    <rect width="216" height="100" rx="12" fill="#F5F7FF" stroke="#E0E5FF"/>
+    <text x="18" y="34" font-size="13" font-weight="600" fill="#6B7280">Accessibility</text>
+    <text x="18" y="72" font-size="26" font-weight="700" fill="#4C6EF5">WCAG 2.1 AA</text>
+    <text x="18" y="90" font-size="11" fill="#9AA1AC">contrast 4.74:1 – 21:1</text>
+  </g>
+  <!-- Card: Modals removed -->
+  <g transform="translate(504,220)">
+    <rect width="216" height="100" rx="12" fill="#F5F7FF" stroke="#E0E5FF"/>
+    <text x="18" y="34" font-size="13" font-weight="600" fill="#6B7280">Modal dialogs removed</text>
+    <text x="18" y="72" font-size="30" font-weight="700" fill="#4C6EF5">4</text>
+    <text x="18" y="90" font-size="11" fill="#9AA1AC">replaced by inline editing</text>
+  </g>
+
+  <!-- footer note -->
+  <text x="40" y="360" font-size="12" fill="#9AA1AC">Also verified: learnability ≤ 4 steps per task · 14/14 components modular · runs on Chrome, Firefox &amp; Safari</text>
+
+  <!-- legend -->
+  <g transform="translate(40,392)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#2E9E5B"/>
+    <text x="22" y="12" font-size="12" fill="#6B7280">performance threshold met</text>
+    <rect x="220" y="0" width="14" height="14" rx="3" fill="#4C6EF5"/>
+    <text x="242" y="12" font-size="12" fill="#6B7280">quality attribute verified</text>
+  </g>
+</svg>
